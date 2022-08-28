@@ -1,0 +1,223 @@
+library ieee;
+use 	ieee.std_logic_1164.all;
+library std;
+use std.standard.all;
+library work;
+use work.all;
+
+entity Slave_I2C is port (
+	i_en		: in std_logic;
+	i_clk		: in std_logic;
+	i_addr		: in std_logic_vector ( 6 downto 0);
+	i_wr		: in std_logic;
+	i_data_tran	: in std_logic;
+	o_data_recv	: out std_logic;
+	io_SDA	: inout std_logic;
+	io_SCL	: inout std_logic
+	
+);
+end Slave_I2C;
+
+architecture main of Slave_I2C is
+	signal sda_out	: std_logic;
+	signal sda_in	: std_logic;
+	signal en_sda_inout	: std_logic:='0';-- 1 out, 0 in
+	signal scl_out	: std_logic;
+	signal scl_in	: std_logic;
+	signal en_scl_inout	: std_logic:='0';-- 1 out, 0 in
+	signal perscale	: integer range 0 to 5210:='5208';
+	signal count	: integer range 0 to 5210:='0';
+	type 	 state_I2C	is (start,addr,wr,ack1,data_tran,data_recv,ack2_master,ack2_slave,stop);
+	signal state	: state_I2C:=ready;
+	signal time_repeat	: integer range 0 to 2:=0;
+begin
+	io_SDA <= sda_out when en_sda_inout = '1' else 'Z';
+	io_SCL <= scl_out when en_scl_inout = '1' else 'Z';
+process(i_clk,i_en)
+	variable frame_i2c	: std_logic_vector (19 downto 0);
+	variable index_i2c	: integer range 0 to 19:=0; 
+	variable en_recv		: std_logic := '0';
+begin
+	if(i_en = '0') then
+		en_sda_inout <= '1';
+		sda_out <= '1';
+		en_scl_inout <= '1';
+		scl_out <= '1';
+	else if(rising_edge(i_clk)) then
+			count <= count +1;
+			case state is
+				when ready 	=>
+					index_i2c := 0;
+					frame_i2c(0):='0';					-- start
+					frame_i2c(7 downto 1 ) := i_addr;	--address
+					frame_i2c(8)	:= i_wr;			-- write/read
+					-- frame_i2c(9) is ack1
+					frame_i2c(19)	:= '0';				-- stop
+					state <= start;
+				when start 	=>
+					en_sda_inout <= '1';
+					sda_out <= frame_i2c(index_i2c);
+					if(count = perscale) then
+						en_scl_inout <= '1';
+						scl_out	<= '0';
+						state	<= addr;
+						count <= 0;
+						index_i2c := index_i2c+1;
+					end if;
+					
+				when addr	=>
+					if(count = perscale/2) then
+						scl_out <= '1';
+						en_sda_inout <= '1';
+						sda_out <= frame_i2c(index_i2c);
+						index_i2c := index_i2c +1;
+						
+					elsif ( count = perscale ) then
+						scl_out <= '0';
+						count <= 0;
+						if ( index_i2c = 8 ) then
+							state <= wr;
+						end if;
+					end if;
+					
+				when wr		=>
+					if(count = perscale/2) then
+						scl_out <= '1';
+						en_sda_inout <= '1';
+						sda_out <= frame_i2c(index_i2c);
+						index_i2c := index_i2c +1;
+						
+					elsif ( count = perscale ) then
+						scl_out <= '0';
+						count <= 0;
+						if ( index_i2c = 9 ) then
+							state <= ack1;
+						end if;
+					end if;
+					
+				when ack1	=>
+					if(count = perscale/2) then
+						scl_out <= '1';
+						en_sda_inout <= '0';			-- high Z + tro keo len = 1
+						index_i2c := index_i2c +1;		-- index_i2c = 10
+						sda_in <= io_SDA;				-- tuc la phan cung no se noi voi nghau
+						
+					elsif ( count = perscale ) then
+						scl_out <= '0';
+						count <= 0;
+						-- ??? sda_in <= io_SDA;
+						if(sda_in = '0') then--- co phan hoi
+							if( frame_i2c(8) = '0') then	-- write
+								frame_i2c (17 downto 10) := i_data_tran;
+								state <= data_tran;
+							else						-- read
+								state <= data_recv;
+							end if;
+						else				-- khong co phan hoi
+							state <= stop;
+						end if;
+					end if;
+					
+				when data_tran	=>
+					if(count = perscale/2) then
+						scl_out <= '1';
+						en_sda_inout <= '1';
+						sda_out <= frame_i2c(index_i2c);
+						index_i2c := index_i2c +1;
+						
+					elsif ( count = perscale ) then
+						scl_out <= '0';
+						count <= 0;
+						if ( index_i2c = 18 ) then
+							state <= ack2_slave;
+						end if;
+					end if;
+					
+				when data_recv	=>
+					en_scl_inout <= '0';	-- high z, slave will pull scl to 0
+					scl_in <= io_SCL;		
+					if(scl_in = '1') then	-- wait slave start tran data
+						en_scl_inout <= '1';
+						en_recv := '1';
+					end if;
+					if (en_recv = '1') then		-- receive data from slave
+						if(count = perscale/2) then
+							scl_out <= '1';
+							en_sda_inout <= '1';
+							sda_in <= io_SDA;
+							frame_i2c(index_i2c) <= sda_in;
+							index_i2c := index_i2c +1;
+						elsif ( count = perscale ) then
+							scl_out <= '0';
+							count <= 0;
+							if ( index_i2c = 18 ) then
+								state <= ack2_master;
+							end if;
+						end if;
+					
+					end if;
+					
+				when ack2_master =>
+					if(count = perscale/2) then
+						scl_out <= '1';
+						en_sda_inout <= '1';			
+						sda_out <= '0';					-- da nhan du du lieu
+						index_i2c := index_i2c +1;		-- index_i2c = 19
+						
+						
+					elsif ( count = perscale ) then
+						scl_out <= '0';
+						count <= 0;
+						
+						if(sda_in = '0') then--- co phan hoi
+							state <= stop;
+						else				-- khong co phan hoi
+							state <= data_tran;
+							index_i2c := 10;
+							time_repeat <= time_repeat +1;
+							if(time_repeat = 2) then
+								state <= stop;
+								time_repeat <= 0;
+							end if;
+						end if;
+					end if;
+					
+				when ack2_slave	 =>
+					if(count = perscale/2) then
+						scl_out <= '1';
+						en_sda_inout <= '0';			-- high Z + tro keo len = 1
+						index_i2c := index_i2c +1;		-- index_i2c = 19
+						sda_in <= io_SDA;				-- tuc la phan cung no se noi voi nghau
+						
+					elsif ( count = perscale ) then
+						scl_out <= '0';
+						count <= 0;
+						-- ??? sda_in <= io_SDA;
+						if(sda_in = '0') then--- co phan hoi
+							state <= stop;
+						else				-- khong co phan hoi
+							state <= data_tran;
+							index_i2c := 10;
+							time_repeat <= time_repeat +1;
+							if(time_repeat = 2) then
+								state <= stop;
+								time_repeat <= 0;
+							end if;
+						end if;
+					end if;
+					
+				when stop =>
+					en_scl_inout <= '1';
+					scl_out <= '1';
+					
+					if(count = perscale) then
+						en_sda_inout <= '1';
+						sda_out <= frame_i2c(index_i2c);--index_i2c= 19
+						state	<= ready;
+						count <= 0;
+					end if;
+			end case;
+			
+	end if;
+end process;
+end main;

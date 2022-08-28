@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library std;
+use std.standard.all;
+library work;
+use work.all;
+entity test_main is port(
+	i_clk	: in std_logic;
+	io_x	: inout std_logic;
+	
+);
+end test_main;
+architecture main of test_main is
+begin
+
+end main;

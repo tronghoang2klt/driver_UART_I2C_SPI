@@ -1,0 +1,25 @@
+E:/Bai_Tap_Viettel/I2C_code/Slave_I2C.vhd {1 {vcom -work work -2002 -explicit -stats=none E:/Bai_Tap_Viettel/I2C_code/Slave_I2C.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Slave_I2C
+-- Compiling architecture main of Slave_I2C
+
+} {} {}} E:/Bai_Tap_Viettel/I2C_code/Master_I2C.vhd {1 {vcom -work work -2002 -explicit -stats=none E:/Bai_Tap_Viettel/I2C_code/Master_I2C.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Master_I2C
+-- Compiling architecture main of Master_I2C
+
+} {} {}} E:/Bai_Tap_Viettel/I2C_code/Main_I2C.vhd {1 {vcom -work work -2002 -explicit -stats=none E:/Bai_Tap_Viettel/I2C_code/Main_I2C.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Main_I2C
+-- Compiling architecture main of Main_I2C
+
+} {} {}}

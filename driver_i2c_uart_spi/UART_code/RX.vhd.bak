@@ -1,0 +1,20 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library std;
+use std.standard.all;
+library work;
+use work.all;
+
+entity RX is
+port(
+	i_clk			: in std_logic;
+	i_enable_RX	: in std_logic;
+	o_data		: out std_logic_vector (7 downto 0);
+	o_BUSY		: out std_logic;
+	o_TX_Line	: out std_logic
+);
+end RX;
+
+architecture main of RX is
+begin
+end main;

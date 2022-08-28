@@ -1,0 +1,94 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library std;
+use std.standard.all;
+library work;
+use work.all;
+
+entity TX is 
+port(
+	i_clk			: in std_logic;
+	i_enable_TX	: in std_logic;
+	i_data		: in std_logic_vector (7 downto 0);
+	o_BUSY		: out std_logic;
+	o_TX_Line	: out std_logic
+);
+end TX;
+architecture main of TX is
+	constant perscale	: integer := 5208;					--50*10^6/5208=9600 bit/s
+	--signal 	BUSY		: std_logic:= '0';
+	--signal	frame		: std_logic_vector (9 downto 0);	-- frame truyen
+	type uart_state is (ready,start,data_transfer,stop); 
+begin
+process(i_clk,i_enable_TX)
+	variable count	: integer range 0 to 5210 :=0;
+	variable	frame		: std_logic_vector (9 downto 0);	-- frame truyen
+	variable INDEX	: integer range 0 to 10		:=0;		
+	variable	TX_Tran	: std_logic:='1';
+	variable BUSY	: std_logic:='0';
+	variable state	: uart_state := ready;
+	variable next_state	: uart_state := ready;
+	variable pre_enable	:std_logic:='0';
+	-- bien mo phong
+	variable data_mophong	: std_logic_vector (9 downto 0):="1001011010";
+	variable index_mophong	:integer range 0 to 10 :=0;
+	variable count_mophong	:integer range 0 to 10 :=0;
+begin
+	if ( rising_edge(i_clk)) then
+	case state is
+		when ready	=>--trang thai duong truyen ko ban
+			BUSY := '0';
+			INDEX := 0;
+			TX_Tran	:= '1';
+			
+			
+		when start	=>-- truyen bit start
+				TX_Tran	:= frame(INDEX);
+				next_state :=data_transfer;
+				
+		when data_transfer	=>-- truyen cac bit data
+			if(count = perscale) then
+				INDEX := INDEX +1;
+				if(INDEX = 9) then
+					next_state := stop;
+				else
+					TX_Tran	:= frame(INDEX);
+					next_state :=data_transfer;
+				end if;
+				count :=0;
+			end if;
+			
+			
+		when stop	=>-- truyen bit stop
+			
+				TX_Tran	:= frame(INDEX);
+				next_state :=ready;
+				
+			
+
+	end case;
+		
+	if (count_mophong = perscale)
+	
+			if( BUSY = '1' ) then
+			count := count +1;
+			end if;
+	
+	
+	if( i_enable_TX ='1' and pre_enable = '0' and BUSY = '0' ) then-- yeu cau truyen
+		frame(0)		:= '0';				-- bit start
+		frame(9)		:= '1';				-- bit stop
+		frame(8 downto 1)	:=i_data;	-- data
+		BUSY := '1';						-- duong truyen ban
+		next_state	:= start;
+	elsif (BUSY = '0')	then				-- tranh truong hop truyen bi ngat
+		next_state := ready;
+	end if;
+	
+	pre_enable :=i_enable_TX;
+	state := next_state;
+	o_BUSY <= BUSY;
+	o_TX_Line <= TX_Tran;
+	end if;
+end process;
+end main;

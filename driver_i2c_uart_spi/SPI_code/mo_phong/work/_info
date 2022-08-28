@@ -1,0 +1,175 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dE:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/UART_code/mo_phong
+Emaster_spi
+Z0 w1661664325
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 36
+Z3 dE:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/mo_phong
+Z4 8E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd
+Z5 FE:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd
+l0
+Z6 L18 1
+VO^`G8J]EZgniE]E?nG6DM0
+!s100 mZK9ViVLd2_4zfo^_bj<I3
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1661666520
+!i10b 1
+Z9 !s108 1661666520.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd|
+Z11 !s107 E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Amain
+R1
+R2
+DEx4 work 10 master_spi 0 22 O^`G8J]EZgniE]E?nG6DM0
+!i122 36
+l106
+L38 76
+VZ^j:086H@7G[M8Jc>i@Eb1
+!s100 M<MgZceS>Xz5Ceb2oTCQO2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Emaster_spi_miso
+Z14 w1661666487
+R1
+R2
+!i122 37
+R3
+Z15 8E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MISO.vhd
+Z16 FE:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MISO.vhd
+l0
+R6
+VKA@lAOn1fQ?4n<KMjjg6]2
+!s100 [z>oPLLJAG>Fk6LIKe0U42
+R7
+32
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MISO.vhd|
+Z18 !s107 E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MISO.vhd|
+!i113 1
+R12
+R13
+Amain
+R1
+R2
+DEx4 work 15 master_spi_miso 0 22 KA@lAOn1fQ?4n<KMjjg6]2
+!i122 37
+l42
+L34 102
+V05hA79LaYd3=40Zgc;MXf1
+!s100 O?3MKa:Uaa62:2RH>0:<<2
+R7
+32
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Emaster_spi_mosi
+Z19 w1661664665
+R1
+R2
+!i122 38
+R3
+Z20 8E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd
+Z21 FE:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd
+l0
+R6
+VGTNFmEaX074PZEJcC=WZ=2
+!s100 l`zU^SLn6Wa<nYRG7IJ2F0
+R7
+32
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd|
+Z23 !s107 E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd|
+!i113 1
+R12
+R13
+Amain
+R1
+R2
+DEx4 work 15 master_spi_mosi 0 22 GTNFmEaX074PZEJcC=WZ=2
+!i122 38
+l46
+L36 106
+V2T3IVDo;H0L<8XGcnndbW2
+!s100 MhdU6_z^RJZ_i=`YzGl5D1
+R7
+32
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13
+Emaster_spi_scl
+Z24 w1661664550
+R1
+R2
+!i122 39
+R3
+Z25 8E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd
+Z26 FE:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd
+l0
+L8 1
+VhzhicNT3VBSPDCzA^CJS80
+!s100 kL9@iGkO]dU_IGO:1TJ[Q0
+R7
+32
+Z27 !s110 1661666521
+!i10b 1
+Z28 !s108 1661666521.000000
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd|
+Z30 !s107 E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd|
+!i113 1
+R12
+R13
+Amain
+R1
+R2
+Z31 DEx4 work 14 master_spi_scl 0 22 hzhicNT3VBSPDCzA^CJS80
+!i122 39
+l26
+Z32 L18 62
+Z33 VzPYMjEoC[O5J<cf:BV8jK3
+Z34 !s100 WPH5MEWC_niHjIC`lILAJ1
+R7
+32
+R27
+!i10b 1
+R28
+R29
+R30
+!i113 1
+R12
+R13

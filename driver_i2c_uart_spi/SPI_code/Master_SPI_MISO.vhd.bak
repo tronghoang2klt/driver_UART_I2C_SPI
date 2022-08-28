@@ -1,0 +1,122 @@
+
+-------------mode------------------------------------------
+----mode 	| CPOL	| CPHA	| idle clock	| sample data and 
+-----0			0			0			0					rising_edge
+-----1			0			1			0					falling_edge
+-----2			1			0			1					rising_edge
+-----3			1			1			1					falling_edge	
+
+-- in this example, we send or receive byte data
+-- 1 master and slave
+library ieee;
+use	ieee.std_logic_1164.all;
+library std;
+use	std.standard.all;
+library work;
+use 	work.all;
+		
+entity Master_SPI_MISO is 
+port(
+	i_clk	:in std_logic;
+	------------MOSI-------------
+	i_enable_TX	:in std_logic:='0';
+	o_MOSI	:out std_logic;
+	i_Data_TX:in std_logic_vector (7 downto 0);
+	
+	----------CPOL and CPHA, SS, clock----------
+	i_CPOL	:in std_logic;
+	i_CPHA	:in std_logic;
+	o_SCL		:out std_logic;
+	o_SS		:out std_logic:='1';
+	
+	-----------MISO------------------
+	i_MISO	:in std_logic;
+	i_enable_RX	:in std_logic:='0';
+	o_Data_RX:out std_logic_vector (7 downto 0)
+);
+end Master_SPI;
+
+architecture main of Master_SPI_MISO is
+	constant perscale	:integer:=5208;
+	type Mode_type is (MODE0,MODE1,MODE2,MODE3);
+	type state_type is (ready,start,stop);
+	signal mode	:Mode_type:= MODE0;
+	signal SCL_idle	:std_logic:='0';
+	signal SCL_temp	:std_logic;
+	signal o_SS_temp	:std_logic;
+begin
+	mode <= MODE0 when (i_CPOL ='0' and i_CPHA = '0')
+				else MODE1 when (i_CPOL ='0' and i_CPHA = '1')
+				else MODE2 when (i_CPOL ='1' and i_CPHA = '0')
+				else MODE3 when (i_CPOL ='1' and i_CPHA = '1');
+	
+	 SCL_idle <= '0' when (mode = MODE0 ) or (mode = MODE2) else
+					 '1' when (mode = MODE1 ) or (mode = MODE3);
+
+ process(i_clk,i_enable_RX)
+
+	variable frame_RX : std_logic_vector(7 downto 0);
+	variable INDEX	: integer range 0 to 8 :=0;
+	variable pre_enable	:std_logic:='0';
+	variable count	:integer range 0 to 5210 :=0;
+	variable SS_temp :std_logic := '1';
+	variable state	: state_type :=ready;
+	variable next_state	: state_type :=ready;
+begin
+	if(i_enable_RX ='0') then
+	else
+	if(rising_edge(i_clk)) then
+		
+		--------------------- SS---------------------
+		if(i_enable_RX = '1' and pre_enable = '0') then
+			SS_temp := '0';
+			next_state:= start;
+		end if;
+		
+		---------------------begin ss=0----------
+		if(SS_temp = '0') then
+			count :=count +1;
+		end if;
+		
+			case state is
+			
+			when ready =>
+				SCL_temp	<= SCL_idle;
+				INDEX := 0;
+				SS_temp	:= '1';
+				
+			when start =>
+				
+				if(INDEX = 8) then
+					next_state := stop;
+				else
+				
+					if ( (mode = MODE0 or mode = MODE2) and count = perscale) then	----rising_edge
+						frame_RX(INDEX):=i_MISO;
+						INDEX := INDEX +1;
+					elsif ( ( mode = MODE1 OR mode = MODE3) and count = 1) then------falling_edge
+						frame_RX(INDEX):=i_MISO;
+						INDEX := INDEX +1;
+					end if;
+					
+					if (count=perscale) then
+						count:=0;
+						SCL_temp <= not SCL_temp;
+					end if;
+				end if;
+				
+			when stop  =>
+				next_state :=ready;
+				o_Data_RX <= frame_RX;
+			end case;
+		
+		state := next_state;
+		pre_enable := i_enable_RX;
+		o_SS_temp	<= SS_temp;
+	end if;
+	end if;
+end process;
+o_SCL<=SCL_temp;
+o_SS	<= o_SS_temp;
+end main;
+ 

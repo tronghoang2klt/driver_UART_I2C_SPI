@@ -1,0 +1,35 @@
+{E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd} {2 {vcom -work work -2002 -explicit -stats=none {E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Master_SPI
+-- Compiling architecture main of Master_SPI
+** Warning: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd(96): (vcom-1013) Initial value of "pre_busy_mosi" depends on value of signal "Busy_MOSI".
+
+} {} {}} {E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd} {2 {vcom -work work -2002 -explicit -stats=none {E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Master_SPI_SCL
+-- Compiling architecture main of Master_SPI_SCL
+** Warning: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd(35): (vcom-1013) Initial value of "SCL_temp" depends on value of signal "scl_idle".
+
+} {} {}} {E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MISO.vhd} {1 {vcom -work work -2002 -explicit -stats=none {E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MISO.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Master_SPI_MISO
+-- Compiling architecture main of Master_SPI_MISO
+
+} {} {}} {E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd} {1 {vcom -work work -2002 -explicit -stats=none {E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Master_SPI_MOSI
+-- Compiling architecture main of Master_SPI_MOSI
+
+} {} {}}

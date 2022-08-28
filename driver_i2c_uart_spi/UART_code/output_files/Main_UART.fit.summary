@@ -1,0 +1,11 @@
+Fitter Status : Successful - Fri Jul 15 21:21:18 2022
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : Main_UART
+Top-level Entity Name : TX
+Family : MAX V
+Device : 5M2210ZF324I5
+Timing Models : Final
+Total logic elements : 54 / 2,210 ( 2 % )
+Total pins : 12 / 271 ( 4 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

@@ -1,0 +1,216 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dE:/Bai_Tap_Viettel/UART_code
+Emain_spi
+Z0 w1658591469
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 343
+Z3 dE:/Bai_Tap_Viettel/SPI_code
+Z4 8E:/Bai_Tap_Viettel/SPI_code/Main_SPI.vhd
+Z5 FE:/Bai_Tap_Viettel/SPI_code/Main_SPI.vhd
+l0
+L8 1
+Vm_DQi`1Ik`B7JU:BlKOK[0
+!s100 XU;h]VjEf=Wa>190<X`@32
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1658642909
+!i10b 1
+Z8 !s108 1658642909.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/Bai_Tap_Viettel/SPI_code/Main_SPI.vhd|
+Z10 !s107 E:/Bai_Tap_Viettel/SPI_code/Main_SPI.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Amain
+R1
+R2
+Z13 DEx4 work 8 main_spi 0 22 m_DQi`1Ik`B7JU:BlKOK[0
+!i122 343
+l45
+Z14 L17 32
+Z15 VD?l6DPkCW6HBVjGzfXeR[1
+Z16 !s100 GOn2:?g8XTN;2=F12=K:83
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Emaster_spi
+Z17 w1658642474
+R1
+R2
+!i122 339
+R3
+Z18 8E:/Bai_Tap_Viettel/SPI_code/Master_SPI.vhd
+Z19 FE:/Bai_Tap_Viettel/SPI_code/Master_SPI.vhd
+l0
+Z20 L18 1
+VO^`G8J]EZgniE]E?nG6DM0
+!s100 mZK9ViVLd2_4zfo^_bj<I3
+R6
+32
+Z21 !s110 1658642908
+!i10b 1
+Z22 !s108 1658642908.000000
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/Bai_Tap_Viettel/SPI_code/Master_SPI.vhd|
+Z24 !s107 E:/Bai_Tap_Viettel/SPI_code/Master_SPI.vhd|
+!i113 1
+R11
+R12
+Amain
+R1
+R2
+DEx4 work 10 master_spi 0 22 O^`G8J]EZgniE]E?nG6DM0
+!i122 339
+l99
+L38 81
+VcPkDIWlW7gkK<@4>YDAoZ2
+!s100 h5iGfdjA3K=P_B:f>196U2
+R6
+32
+R21
+!i10b 1
+R22
+R23
+R24
+!i113 1
+R11
+R12
+Emaster_spi_miso
+Z25 w1658642852
+R1
+R2
+!i122 340
+R3
+Z26 8E:/Bai_Tap_Viettel/SPI_code/Master_SPI_MISO.vhd
+Z27 FE:/Bai_Tap_Viettel/SPI_code/Master_SPI_MISO.vhd
+l0
+R20
+VGHnh=dF@7e>SaQLHUg`d33
+!s100 6Ah;h[d?FVcLkmc`@AKi]3
+R6
+32
+R21
+!i10b 1
+R22
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/Bai_Tap_Viettel/SPI_code/Master_SPI_MISO.vhd|
+Z29 !s107 E:/Bai_Tap_Viettel/SPI_code/Master_SPI_MISO.vhd|
+!i113 1
+R11
+R12
+Amain
+R1
+R2
+DEx4 work 15 master_spi_miso 0 22 GHnh=dF@7e>SaQLHUg`d33
+!i122 340
+l41
+L34 124
+VT>8MQm5d6edIU5AGoEcPN3
+!s100 mAB:1BOomFzHb2h8SUaOP1
+R6
+32
+R21
+!i10b 1
+R22
+R28
+R29
+!i113 1
+R11
+R12
+Emaster_spi_mosi
+Z30 w1658635029
+R1
+R2
+!i122 341
+R3
+Z31 8E:/Bai_Tap_Viettel/SPI_code/Master_SPI_MOSI.vhd
+Z32 FE:/Bai_Tap_Viettel/SPI_code/Master_SPI_MOSI.vhd
+l0
+R20
+VI2:boeQI:DN3T_Om8Zinj2
+!s100 fDK7`EhXf9Wj;m;FD2N8f3
+R6
+32
+R7
+!i10b 1
+R22
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/Bai_Tap_Viettel/SPI_code/Master_SPI_MOSI.vhd|
+Z34 !s107 E:/Bai_Tap_Viettel/SPI_code/Master_SPI_MOSI.vhd|
+!i113 1
+R11
+R12
+Amain
+R1
+R2
+DEx4 work 15 master_spi_mosi 0 22 I2:boeQI:DN3T_Om8Zinj2
+!i122 341
+l39
+L33 115
+VU?m6g:LIFmVBa;2mJ9BDG2
+!s100 Nd]2YM2dX[Y2[M?<M_7NF3
+R6
+32
+R7
+!i10b 1
+R22
+R33
+R34
+!i113 1
+R11
+R12
+Emaster_spi_scl
+Z35 w1658636610
+R1
+R2
+!i122 342
+R3
+Z36 8E:/Bai_Tap_Viettel/SPI_code/Master_SPI_SCL.vhd
+Z37 FE:/Bai_Tap_Viettel/SPI_code/Master_SPI_SCL.vhd
+l0
+L8 1
+V3:jQ><K]OHH`JfLMES:5F3
+!s100 Chzbbl?g@=fRCm`3d[aeg3
+R6
+32
+R7
+!i10b 1
+R8
+Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/Bai_Tap_Viettel/SPI_code/Master_SPI_SCL.vhd|
+Z39 !s107 E:/Bai_Tap_Viettel/SPI_code/Master_SPI_SCL.vhd|
+!i113 1
+R11
+R12
+Amain
+R1
+R2
+DEx4 work 14 master_spi_scl 0 22 3:jQ><K]OHH`JfLMES:5F3
+!i122 342
+l24
+L18 35
+VEbHL79NgoQekC[@fTTcI;2
+!s100 ;]K>lJG9J:FTml:60AJ502
+R6
+32
+R7
+!i10b 1
+R8
+R38
+R39
+!i113 1
+R11
+R12

@@ -1,0 +1,244 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/simulation/modelsim
+Emain_i2c
+Z1 w1661164881
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd
+Z5 FC:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd
+l0
+L7
+VK0_FgYU;^O4<XAUE4RQaL0
+!s100 XV1Gz4;i5f]VoPfZUlic03
+Z6 OV;C;10.4d;61
+32
+Z7 !s110 1661217069
+!i10b 1
+Z8 !s108 1661217069.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd|
+Z10 !s107 C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1
+Amain
+R2
+R3
+DEx4 work 8 main_i2c 0 22 K0_FgYU;^O4<XAUE4RQaL0
+l49
+L15
+VBhDh7_9dmOkD9m@QanKT[3
+!s100 cbOB]XSlOJ_K=h;fl7`if3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Emaster_i2c
+Z13 w1661161417
+R2
+R3
+R0
+Z14 8C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Master_I2C.vhd
+Z15 FC:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Master_I2C.vhd
+l0
+L8
+V`7=HeP2Om>I=[U<_LaYGZ1
+!s100 MVe7Co>QY0l<A``ZB;Shl1
+R6
+32
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Master_I2C.vhd|
+Z17 !s107 C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Master_I2C.vhd|
+!i113 1
+R11
+R12
+Amain
+R2
+R3
+DEx4 work 10 master_i2c 0 22 `7=HeP2Om>I=[U<_LaYGZ1
+l34
+L22
+VTc_M5QHXVdVG]Jk:g1f8h3
+!s100 igRi]BfAf^DR3lQdiI0a93
+R6
+32
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Eslave_i2c
+Z18 w1661180623
+R2
+R3
+R0
+Z19 8C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd
+Z20 FC:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd
+l0
+L8
+V14FHEEo>HVdd73>lN<0ja2
+!s100 H[OL4a]AQZIT0^d>U2G3K0
+R6
+32
+R7
+!i10b 1
+R8
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd|
+Z22 !s107 C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd|
+!i113 1
+R11
+R12
+Amain
+R2
+R3
+DEx4 work 9 slave_i2c 0 22 14FHEEo>HVdd73>lN<0ja2
+l36
+L20
+Vb^jBe6[]c4jKePZb0XGe_0
+!s100 bWKhPVKZcI<ag4_O]QB9B1
+R6
+32
+R7
+!i10b 1
+R8
+R21
+R22
+!i113 1
+R11
+R12
+Etest1
+Z23 w1660819068
+R2
+R3
+R0
+Z24 8C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd
+Z25 FC:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd
+l0
+L7
+Vn7PM8G>CO?3>UE;U2YGMi0
+!s100 im[BPg_?[a:hV5KJa8HBW3
+R6
+32
+R7
+!i10b 1
+R8
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd|
+Z27 !s107 C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd|
+!i113 1
+R11
+R12
+Amain
+R2
+R3
+DEx4 work 5 test1 0 22 n7PM8G>CO?3>UE;U2YGMi0
+l26
+L14
+VH95PSV2AV76FN;amnkciJ0
+!s100 ;4Wbn70QNUKfCdFlE6:Jz1
+R6
+32
+!s110 1660807471
+!i10b 1
+!s108 1660807471.000000
+R26
+R27
+!i113 1
+R11
+R12
+Etest2
+Z28 w1660807346
+R2
+R3
+R0
+Z29 8C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test2.vhd
+Z30 FC:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test2.vhd
+l0
+L7
+VC:E;DL[k?=m172GQjef6@0
+!s100 6Y1im?YH3g8f3[kL=Raco1
+R6
+32
+R7
+!i10b 1
+R8
+Z31 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test2.vhd|
+Z32 !s107 C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test2.vhd|
+!i113 1
+R11
+R12
+Amain
+R2
+R3
+Z33 DEx4 work 5 test2 0 22 C:E;DL[k?=m172GQjef6@0
+l25
+L13
+Z34 V=^BX5>]Eci`Nk]Dc:f;h;2
+Z35 !s100 [FlZVlUlXO@E_Rkk<f;:_0
+R6
+32
+R7
+!i10b 1
+R8
+R31
+R32
+!i113 1
+R11
+R12
+Etest_mainn
+Z36 w1660796017
+R2
+R3
+R0
+Z37 8C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test_mainn.vhd
+Z38 FC:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test_mainn.vhd
+l0
+L7
+Va9I2@G1dR=_B2a7QX3?P60
+!s100 lc926G:1^G`VUX]@LL=5=3
+R6
+32
+R7
+!i10b 1
+R8
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test_mainn.vhd|
+Z40 !s107 C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test_mainn.vhd|
+!i113 1
+R11
+R12
+Amain
+R2
+R3
+DEx4 work 10 test_mainn 0 22 a9I2@G1dR=_B2a7QX3?P60
+l33
+L14
+VzDlJ]l82074;mj7`bhFS10
+!s100 8mC8I:niDQ_[S1EULkgkb1
+R6
+32
+R7
+!i10b 1
+R8
+R39
+R40
+!i113 1
+R11
+R12

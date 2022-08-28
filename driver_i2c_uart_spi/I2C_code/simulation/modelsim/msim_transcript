@@ -1,0 +1,211 @@
+# Reading C:/altera/16.0/modelsim_ase/tcl/vsim/pref.tcl
+# do Main_I2C_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying C:/altera/16.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 08:12:50 on Aug 17,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Main_I2C
+# -- Compiling architecture main of Main_I2C
+# End time: 08:12:50 on Aug 17,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Master_I2C.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 08:12:50 on Aug 17,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Master_I2C.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Master_I2C
+# -- Compiling architecture main of Master_I2C
+# End time: 08:12:50 on Aug 17,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 08:12:50 on Aug 17,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Slave_I2C
+# -- Compiling architecture main of Slave_I2C
+# End time: 08:12:50 on Aug 17,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test_mainn.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 08:12:50 on Aug 17,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test_mainn.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity test_mainn
+# -- Compiling architecture main of test_mainn
+# End time: 08:12:50 on Aug 17,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 08:12:50 on Aug 17,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity test1
+# -- Compiling architecture main of test1
+# End time: 08:12:50 on Aug 17,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test2.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 08:12:50 on Aug 17,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity test2
+# -- Compiling architecture main of test2
+# End time: 08:12:50 on Aug 17,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim -gui -l msim_transcript -do Main_I2C_run_msim_rtl_vhdl.do work.test_mainn
+# vsim -gui -l msim_transcript -do "Main_I2C_run_msim_rtl_vhdl.do" work.test_mainn 
+# Start time: 08:13:07 on Aug 17,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.test_mainn(main)
+# Loading work.test1(main)
+# Loading work.test2(main)
+# do Main_I2C_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 08:13:09 on Aug 17,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Main_I2C
+# -- Compiling architecture main of Main_I2C
+# End time: 08:13:09 on Aug 17,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Master_I2C.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 08:13:09 on Aug 17,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Master_I2C.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Master_I2C
+# -- Compiling architecture main of Master_I2C
+# End time: 08:13:09 on Aug 17,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 08:13:09 on Aug 17,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Slave_I2C
+# -- Compiling architecture main of Slave_I2C
+# End time: 08:13:09 on Aug 17,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test_mainn.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 08:13:09 on Aug 17,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test_mainn.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity test_mainn
+# -- Compiling architecture main of test_mainn
+# End time: 08:13:09 on Aug 17,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 08:13:09 on Aug 17,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity test1
+# -- Compiling architecture main of test1
+# End time: 08:13:09 on Aug 17,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test2.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 08:13:09 on Aug 17,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity test2
+# -- Compiling architecture main of test2
+# End time: 08:13:09 on Aug 17,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+add wave -position insertpoint  \
+sim:/test_mainn/i_clk \
+sim:/test_mainn/io_x
+add wave -position insertpoint  \
+sim:/test_mainn/U1/en_x
+add wave -position insertpoint  \
+sim:/test_mainn/U2/en_x
+force -freeze sim:/test_mainn/i_clk 1 0, 0 {5 ps} -r 10ps
+run
+# ** Fatal: (vsim-3421) Value 7 is out of range 0 to 6.
+#    Time: 70 ps  Iteration: 0  Process: /test_mainn/U1/line__20 File: C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd
+# Fatal error in Process line__20 at C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd line 26
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd 26 Process line__20
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd 26 Process line__20
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd 26 Process line__20
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd 26 Process line__20
+# 
+restart -f
+# Loading work.test_mainn(main)
+# Loading work.test1(main)
+# Loading work.test2(main)
+force -freeze sim:/test_mainn/i_clk 1 0, 0 {5 ps} -r 10ps
+run
+# ** Fatal: (vsim-3421) Value 7 is out of range 0 to 6.
+#    Time: 70 ps  Iteration: 0  Process: /test_mainn/U1/line__20 File: C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd
+# Fatal error in Process line__20 at C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd line 26
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd 26 Process line__20
+# 
+# End time: 08:14:56 on Aug 17,2022, Elapsed time: 0:01:49
+# Errors: 7, Warnings: 0

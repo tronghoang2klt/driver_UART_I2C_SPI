@@ -1,0 +1,233 @@
+Analysis & Elaboration report for Main_SPI
+Sun Aug 28 13:01:45 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "Master_SPI_MISO:U3"
+  6. Port Connectivity Checks: "Master_SPI_MOSI:U2"
+  7. Analysis & Elaboration Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Sun Aug 28 13:01:45 2022       ;
+; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                 ; Main_SPI                                    ;
+; Top-level Entity Name         ; Master_SPI                                  ;
+; Family                        ; MAX V                                       ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                            ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 5M2210ZF324I5      ;                    ;
+; Top-level entity name                                            ; Master_SPI         ; Main_SPI           ;
+; Family name                                                      ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Master_SPI_MISO:U3"                                                                     ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; o_comple ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_busy   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Master_SPI_MOSI:U2"                                                                     ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; o_comple ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_busy   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sun Aug 28 13:01:37 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Main_SPI -c Main_SPI --analysis_and_elaboration
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file main_spi.vhd
+    Info (12022): Found design unit 1: Main_SPI-main File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Main_SPI.vhd Line: 17
+    Info (12023): Found entity 1: Main_SPI File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Main_SPI.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file master_spi.vhd
+    Info (12022): Found design unit 1: Master_SPI-main File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd Line: 38
+    Info (12023): Found entity 1: Master_SPI File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd Line: 18
+Info (12021): Found 2 design units, including 1 entities, in source file slave_spi.vhd
+    Info (12022): Found design unit 1: Slave_SPI-main File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Slave_SPI.vhd Line: 16
+    Info (12023): Found entity 1: Slave_SPI File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Slave_SPI.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file master_spi_miso.vhd
+    Info (12022): Found design unit 1: Master_SPI_MISO-main File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MISO.vhd Line: 34
+    Info (12023): Found entity 1: Master_SPI_MISO File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MISO.vhd Line: 18
+Info (12021): Found 2 design units, including 1 entities, in source file master_spi_scl.vhd
+    Info (12022): Found design unit 1: Master_SPI_SCL-main File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd Line: 18
+    Info (12023): Found entity 1: Master_SPI_SCL File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file master_spi_mosi.vhd
+    Info (12022): Found design unit 1: Master_SPI_MOSI-main File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 36
+    Info (12023): Found entity 1: Master_SPI_MOSI File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 18
+Info (12127): Elaborating entity "Master_SPI" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at Master_SPI.vhd(23): used implicit default value for signal "o_MOSI" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd Line: 23
+Warning (10036): Verilog HDL or VHDL warning at Master_SPI.vhd(95): object "Busy_MISO" assigned a value but never read File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd Line: 95
+Warning (10036): Verilog HDL or VHDL warning at Master_SPI.vhd(99): object "comple_MOSI" assigned a value but never read File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd Line: 99
+Warning (10036): Verilog HDL or VHDL warning at Master_SPI.vhd(100): object "comple_MISO" assigned a value but never read File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd Line: 100
+Info (12128): Elaborating entity "Master_SPI_SCL" for hierarchy "Master_SPI_SCL:U1" File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd Line: 108
+Warning (10492): VHDL Process Statement warning at Master_SPI_SCL.vhd(35): signal "scl_idle" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd Line: 35
+Warning (10492): VHDL Process Statement warning at Master_SPI_SCL.vhd(39): signal "i_SS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd Line: 39
+Warning (10492): VHDL Process Statement warning at Master_SPI_SCL.vhd(41): signal "scl_idle" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd Line: 41
+Info (10041): Inferred latch for "count_clk[0]" at Master_SPI_SCL.vhd(31) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd Line: 31
+Info (10041): Inferred latch for "count_clk[1]" at Master_SPI_SCL.vhd(31) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd Line: 31
+Info (10041): Inferred latch for "count_clk[2]" at Master_SPI_SCL.vhd(31) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd Line: 31
+Info (10041): Inferred latch for "count_clk[3]" at Master_SPI_SCL.vhd(31) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd Line: 31
+Info (10041): Inferred latch for "o_SCL" at Master_SPI_SCL.vhd(29) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd Line: 29
+Info (10041): Inferred latch for "scl_idle" at Master_SPI_SCL.vhd(27) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_SCL.vhd Line: 27
+Info (12128): Elaborating entity "Master_SPI_MOSI" for hierarchy "Master_SPI_MOSI:U2" File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at Master_SPI_MOSI.vhd(63): signal "i_CPHA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at Master_SPI_MOSI.vhd(68): signal "pre_SS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at Master_SPI_MOSI.vhd(68): signal "i_CPHA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at Master_SPI_MOSI.vhd(69): signal "i_Data_TX" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at Master_SPI_MOSI.vhd(71): signal "i_CPHA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 71
+Warning (10631): VHDL Process Statement warning at Master_SPI_MOSI.vhd(54): inferring latch(es) for signal or variable "frame_TX", which holds its previous value in one or more paths through the process File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 54
+Warning (10492): VHDL Process Statement warning at Master_SPI_MOSI.vhd(98): signal "i_CPHA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at Master_SPI_MOSI.vhd(105): signal "pre_SS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at Master_SPI_MOSI.vhd(106): signal "i_Data_TX" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at Master_SPI_MOSI.vhd(108): signal "i_CPHA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 108
+Info (10041): Inferred latch for "MOSI_rising_edge:frame_TX[0]" at Master_SPI_MOSI.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 63
+Info (10041): Inferred latch for "MOSI_rising_edge:frame_TX[1]" at Master_SPI_MOSI.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 63
+Info (10041): Inferred latch for "MOSI_rising_edge:frame_TX[2]" at Master_SPI_MOSI.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 63
+Info (10041): Inferred latch for "MOSI_rising_edge:frame_TX[3]" at Master_SPI_MOSI.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 63
+Info (10041): Inferred latch for "MOSI_rising_edge:frame_TX[4]" at Master_SPI_MOSI.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 63
+Info (10041): Inferred latch for "MOSI_rising_edge:frame_TX[5]" at Master_SPI_MOSI.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 63
+Info (10041): Inferred latch for "MOSI_rising_edge:frame_TX[6]" at Master_SPI_MOSI.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 63
+Info (10041): Inferred latch for "MOSI_rising_edge:frame_TX[7]" at Master_SPI_MOSI.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 63
+Info (10041): Inferred latch for "o_comple" at Master_SPI_MOSI.vhd(51) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 51
+Info (10041): Inferred latch for "o_BUSY" at Master_SPI_MOSI.vhd(49) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 49
+Info (10041): Inferred latch for "o_MOSI" at Master_SPI_MOSI.vhd(47) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MOSI.vhd Line: 47
+Info (12128): Elaborating entity "Master_SPI_MISO" for hierarchy "Master_SPI_MISO:U3" File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at Master_SPI_MISO.vhd(59): signal "i_CPHA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MISO.vhd Line: 59
+Warning (10492): VHDL Process Statement warning at Master_SPI_MISO.vhd(63): signal "i_CPHA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MISO.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at Master_SPI_MISO.vhd(94): signal "i_CPHA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MISO.vhd Line: 94
+Warning (10492): VHDL Process Statement warning at Master_SPI_MISO.vhd(100): signal "i_CPHA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/SPI_code/Master_SPI_MISO.vhd Line: 100
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 4750 megabytes
+    Info: Processing ended: Sun Aug 28 13:01:45 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:17
+
+

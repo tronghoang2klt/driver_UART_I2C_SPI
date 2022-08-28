@@ -1,0 +1,14 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd}
+vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Master_I2C.vhd}
+vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd}
+vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test_mainn.vhd}
+vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test1.vhd}
+vcom -93 -work work {C:/Users/Cao Anh Tu/Desktop/hoang/driver_i2c_uart_spi/I2C_code/test2.vhd}
+

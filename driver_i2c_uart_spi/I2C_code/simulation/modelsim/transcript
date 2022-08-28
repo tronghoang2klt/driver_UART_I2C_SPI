@@ -1,0 +1,5 @@
+# Compile of Slave_I2C.vhd was successful.
+# Compile of Main_I2C.vhd was successful.
+# Compile of Master_I2C.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui -l msim_transcript -do Main_I2C_run_msim_rtl_vhdl.do work.main_i2c

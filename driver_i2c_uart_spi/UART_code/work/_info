@@ -1,0 +1,134 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dE:/Quatus_Viettel
+Emain_uart
+Z0 w1658564197
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 44
+Z3 dE:/Bai_Tap_Viettel/UART_code
+Z4 8E:/Bai_Tap_Viettel/UART_code/Main_UART.vhd
+Z5 FE:/Bai_Tap_Viettel/UART_code/Main_UART.vhd
+l0
+L4 1
+V5kh1_aN<=0Y;gN0S1P]8n3
+!s100 ifC?4P;H9Vc?N6k:RZRh@2
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1658564569
+!i10b 1
+Z8 !s108 1658564569.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/Bai_Tap_Viettel/UART_code/Main_UART.vhd|
+Z10 !s107 E:/Bai_Tap_Viettel/UART_code/Main_UART.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Amain
+R1
+R2
+Z13 DEx4 work 9 main_uart 0 22 5kh1_aN<=0Y;gN0S1P]8n3
+!i122 44
+l38
+Z14 L11 37
+Z15 VgjC8?_c2LDf^W]?3dKM1B0
+Z16 !s100 7hG9c4F6lijW85G?;YzR=1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Erx
+Z17 w1658563761
+R1
+R2
+!i122 43
+R3
+Z18 8E:/Bai_Tap_Viettel/UART_code/RX.vhd
+Z19 FE:/Bai_Tap_Viettel/UART_code/RX.vhd
+l0
+L8 1
+VmENVdk;n;ASh_zME>@RYj1
+!s100 QblIlW6naEKXE0WH>3;AS2
+R6
+32
+R7
+!i10b 1
+R8
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/Bai_Tap_Viettel/UART_code/RX.vhd|
+Z21 !s107 E:/Bai_Tap_Viettel/UART_code/RX.vhd|
+!i113 1
+R11
+R12
+Amain
+R1
+R2
+DEx4 work 2 rx 0 22 mENVdk;n;ASh_zME>@RYj1
+!i122 43
+l20
+L17 62
+V:RH:=;V`cbei`YcR2Wn@93
+!s100 QG7Cb3[1<0Bl0R3JdDfL72
+R6
+32
+R7
+!i10b 1
+R8
+R20
+R21
+!i113 1
+R11
+R12
+Etx
+Z22 w1658564548
+R1
+R2
+!i122 42
+R3
+Z23 8E:/Bai_Tap_Viettel/UART_code/TX.vhd
+Z24 FE:/Bai_Tap_Viettel/UART_code/TX.vhd
+l0
+L8 1
+V]>@>@CPd67gOEOI2C7Wlm3
+!s100 Sfzifi16jQal6H1;bm6?W2
+R6
+32
+R7
+!i10b 1
+R8
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/Bai_Tap_Viettel/UART_code/TX.vhd|
+Z26 !s107 E:/Bai_Tap_Viettel/UART_code/TX.vhd|
+!i113 1
+R11
+R12
+Amain
+R1
+R2
+DEx4 work 2 tx 0 22 ]>@>@CPd67gOEOI2C7Wlm3
+!i122 42
+l22
+L17 73
+VJ@U>?K@VNZzUJaJoZT>Ek0
+!s100 KMH2z[;aI0gjC[3nIh7OJ2
+R6
+32
+R7
+!i10b 1
+R8
+R25
+R26
+!i113 1
+R11
+R12

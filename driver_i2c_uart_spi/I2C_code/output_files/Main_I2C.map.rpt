@@ -1,0 +1,302 @@
+Analysis & Elaboration report for Main_I2C
+Sun Aug 28 14:45:38 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "Slave_I2C:U2"
+  6. Port Connectivity Checks: "Master_I2C:U1"
+  7. Analysis & Elaboration Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Sun Aug 28 14:45:38 2022       ;
+; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                 ; Main_I2C                                    ;
+; Top-level Entity Name         ; Main_I2C                                    ;
+; Family                        ; MAX V                                       ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                            ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 5M2210ZF324C4      ;                    ;
+; Top-level entity name                                            ; Main_I2C           ; Main_I2C           ;
+; Family name                                                      ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Slave_I2C:U2"                                                                                    ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; i_en              ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_addr[6..5]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_addr[2..1]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i_addr[4]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i_addr[3]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_addr[0]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_data_tran[7..6] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_data_tran[5..4] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i_data_tran[3]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_data_tran[2]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i_data_tran[1]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_data_tran[0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; o_data_recv       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Master_I2C:U1"                                                                                   ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; i_en              ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_addr[6..5]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_addr[2..1]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i_addr[4]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i_addr[3]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_addr[0]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_wr              ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i_data_tran[4..3] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i_data_tran[7]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_data_tran[6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i_data_tran[5]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_data_tran[2]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_data_tran[1]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i_data_tran[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_data_recv       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_comple          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sun Aug 28 14:45:31 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Main_I2C -c Main_I2C --analysis_and_elaboration
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file main_i2c.vhd
+    Info (12022): Found design unit 1: Main_I2C-main File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd Line: 15
+    Info (12023): Found entity 1: Main_I2C File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file master_i2c.vhd
+    Info (12022): Found design unit 1: Master_I2C-main File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Master_I2C.vhd Line: 22
+    Info (12023): Found entity 1: Master_I2C File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Master_I2C.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file slave_i2c.vhd
+    Info (12022): Found design unit 1: Slave_I2C-main File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 20
+    Info (12023): Found entity 1: Slave_I2C File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file test_mainn.vhd
+    Info (12022): Found design unit 1: test_mainn-main File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/test_mainn.vhd Line: 14
+    Info (12023): Found entity 1: test_mainn File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/test_mainn.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file test1.vhd
+    Info (12022): Found design unit 1: test1-main File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/test1.vhd Line: 14
+    Info (12023): Found entity 1: test1 File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/test1.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file test2.vhd
+    Info (12022): Found design unit 1: test2-main File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/test2.vhd Line: 13
+    Info (12023): Found entity 1: test2 File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/test2.vhd Line: 7
+Info (12127): Elaborating entity "Main_I2C" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at Main_I2C.vhd(16): used explicit default value for signal "i_en_master" because signal was never assigned a value File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd Line: 16
+Warning (10540): VHDL Signal Declaration warning at Main_I2C.vhd(17): used explicit default value for signal "i_en_slave" because signal was never assigned a value File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd Line: 17
+Warning (10540): VHDL Signal Declaration warning at Main_I2C.vhd(18): used explicit default value for signal "i_addr" because signal was never assigned a value File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd Line: 18
+Warning (10540): VHDL Signal Declaration warning at Main_I2C.vhd(19): used explicit default value for signal "i_addr_slave" because signal was never assigned a value File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd Line: 19
+Warning (10540): VHDL Signal Declaration warning at Main_I2C.vhd(20): used explicit default value for signal "i_wr" because signal was never assigned a value File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd Line: 20
+Warning (10540): VHDL Signal Declaration warning at Main_I2C.vhd(21): used explicit default value for signal "i_data_tran_master" because signal was never assigned a value File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd Line: 21
+Warning (10036): Verilog HDL or VHDL warning at Main_I2C.vhd(22): object "o_data_recv_master" assigned a value but never read File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd Line: 22
+Warning (10540): VHDL Signal Declaration warning at Main_I2C.vhd(23): used explicit default value for signal "i_data_tran_slave" because signal was never assigned a value File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd Line: 23
+Warning (10036): Verilog HDL or VHDL warning at Main_I2C.vhd(24): object "o_data_recv_slave" assigned a value but never read File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd Line: 24
+Warning (10036): Verilog HDL or VHDL warning at Main_I2C.vhd(25): object "o_comple" assigned a value but never read File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd Line: 25
+Info (12128): Elaborating entity "Master_I2C" for hierarchy "Master_I2C:U1" File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd Line: 50
+Warning (10036): Verilog HDL or VHDL warning at Master_I2C.vhd(24): object "sda_in" assigned a value but never read File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Master_I2C.vhd Line: 24
+Warning (10036): Verilog HDL or VHDL warning at Master_I2C.vhd(27): object "scl_in" assigned a value but never read File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Master_I2C.vhd Line: 27
+Warning (10540): VHDL Signal Declaration warning at Master_I2C.vhd(29): used explicit default value for signal "perscale" because signal was never assigned a value File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Master_I2C.vhd Line: 29
+Info (12128): Elaborating entity "Slave_I2C" for hierarchy "Slave_I2C:U2" File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Main_I2C.vhd Line: 51
+Warning (10036): Verilog HDL or VHDL warning at Slave_I2C.vhd(26): object "scl_in" assigned a value but never read File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 26
+Warning (10540): VHDL Signal Declaration warning at Slave_I2C.vhd(29): used explicit default value for signal "perscale" because signal was never assigned a value File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 29
+Warning (10036): Verilog HDL or VHDL warning at Slave_I2C.vhd(32): object "thoidoi" assigned a value but never read File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at Slave_I2C.vhd(100): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at Slave_I2C.vhd(175): signal "i_addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 175
+Warning (10492): VHDL Process Statement warning at Slave_I2C.vhd(187): signal "i_data_tran" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 187
+Warning (10631): VHDL Process Statement warning at Slave_I2C.vhd(42): inferring latch(es) for signal or variable "en_sda_inout_temp", which holds its previous value in one or more paths through the process File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at Slave_I2C.vhd(42): inferring latch(es) for signal or variable "sda_out_temp", which holds its previous value in one or more paths through the process File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at Slave_I2C.vhd(42): inferring latch(es) for signal or variable "en_scl_inout_temp", which holds its previous value in one or more paths through the process File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at Slave_I2C.vhd(42): inferring latch(es) for signal or variable "scl_out_temp", which holds its previous value in one or more paths through the process File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at Slave_I2C.vhd(42): inferring latch(es) for signal or variable "state", which holds its previous value in one or more paths through the process File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at Slave_I2C.vhd(42): inferring latch(es) for signal or variable "index_i2c", which holds its previous value in one or more paths through the process File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at Slave_I2C.vhd(42): inferring latch(es) for signal or variable "sda_in_temp", which holds its previous value in one or more paths through the process File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at Slave_I2C.vhd(42): inferring latch(es) for signal or variable "scl_in_temp", which holds its previous value in one or more paths through the process File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at Slave_I2C.vhd(42): inferring latch(es) for signal or variable "frame_i2c", which holds its previous value in one or more paths through the process File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at Slave_I2C.vhd(42): inferring latch(es) for signal or variable "en_temp", which holds its previous value in one or more paths through the process File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at Slave_I2C.vhd(42): inferring latch(es) for signal or variable "time_repeat", which holds its previous value in one or more paths through the process File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at Slave_I2C.vhd(42): inferring latch(es) for signal or variable "o_data_recv", which holds its previous value in one or more paths through the process File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "o_data_recv[0]" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "o_data_recv[1]" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "o_data_recv[2]" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "o_data_recv[3]" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "o_data_recv[4]" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "o_data_recv[5]" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "o_data_recv[6]" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "o_data_recv[7]" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "state.stop" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "state.ack2_slave" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "state.ack2_master" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "state.data_recv" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "state.data_tran" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "state.ack1" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "state.wr" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "state.addr" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "state.start" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "state.ready" at Slave_I2C.vhd(42) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 42
+Info (10041): Inferred latch for "main_process:time_repeat[0]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:time_repeat[1]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:en_temp" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[0]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[1]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[2]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[3]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[4]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[5]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[6]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[7]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[8]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[9]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[10]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[11]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[12]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[13]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[14]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[15]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[16]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[17]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[18]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:frame_i2c[19]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:scl_in_temp" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:sda_in_temp" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:index_i2c[0]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:index_i2c[1]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:index_i2c[2]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:index_i2c[3]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:index_i2c[4]" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:scl_out_temp" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:en_scl_inout_temp" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:sda_out_temp" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info (10041): Inferred latch for "main_process:en_sda_inout_temp" at Slave_I2C.vhd(63) File: E:/Bai_Tap_Viettel/New folder/driver_i2c_uart_spi/I2C_code/Slave_I2C.vhd Line: 63
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 32 warnings
+    Info: Peak virtual memory: 4753 megabytes
+    Info: Processing ended: Sun Aug 28 14:45:38 2022
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:16
+
+

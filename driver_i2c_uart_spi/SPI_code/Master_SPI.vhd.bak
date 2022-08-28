@@ -1,0 +1,17 @@
+library ieee;
+use	ieee.std_logic_1164.all;
+library std;
+use	std.standard.all;
+library work;
+use 	work.all;
+
+entity Master_SPI is 
+port(
+	clk	:in std_logic
+);
+end Master_SPI;
+
+architecture main of Master_SPI is
+begin
+end main;
+ 

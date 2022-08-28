@@ -1,0 +1,282 @@
+library ieee;
+use 	ieee.std_logic_1164.all;
+library std;
+use std.standard.all;
+library work;
+use work.all;
+
+entity Slave_I2C is port (
+	i_en		: in std_logic;								-- cho phep slave truyen nhan
+	i_clk		: in std_logic;
+	i_addr	: in std_logic_vector ( 6 downto 0);
+	i_data_tran	: in std_logic_vector(7 downto 0);
+	o_data_recv	: out std_logic_vector(7 downto 0);
+	io_SDA	: inout std_logic;
+	io_SCL	: inout std_logic
+	
+);
+end Slave_I2C;
+
+architecture main of Slave_I2C is
+	signal sda_out	: std_logic:='1';
+	signal sda_in	: std_logic:='1';
+	signal pre_sda	: std_logic:='1';
+	signal en_sda_inout	: std_logic:='0';-- 1 out, 0 in
+	signal scl_out	: std_logic:='1';
+	signal scl_in	: std_logic:='1';
+	signal pre_scl	: std_logic:='1';
+	signal en_scl_inout	: std_logic:='0';-- 1 out, 0 in
+	signal perscale	: integer range 0 to 5210:=12;
+
+	type 	 state_I2C	is (ready,start,addr,wr,ack1,data_tran,data_recv,ack2_master,ack2_slave,stop);
+	--signal state_temp	: state_I2C:=ready;
+	signal state	: state_I2C:=ready;
+	signal time_repeat	: integer range 0 to 2:=0;
+begin
+	io_SDA <= sda_out when en_sda_inout = '1' else 'Z';
+	io_SCL <= scl_out when en_scl_inout = '1' else 'Z';
+process(i_clk,i_en)
+	variable frame_i2c	: std_logic_vector (19 downto 0);
+	variable index_i2c	: integer range 0 to 19:=0; 
+	variable en_tran		: std_logic := '0';
+	variable count 		: integer range 0 to 5220 :=0;
+	variable en_temp		: std_logic	:='0';
+	variable en_temp_2	: std_logic	:='0';
+	--variable state	: state_I2C:=ready;
+	variable time_repeat	: integer range 0 to 2:=0;
+	variable sda_out_temp			: std_logic:='1';
+	variable sda_in_temp			: std_logic:='1';
+	variable en_sda_inout_temp	: std_logic:='1';-- 1 out, 0 in
+	variable scl_out_temp			: std_logic:='1';
+	variable scl_in_temp			: std_logic:='1';
+	variable en_scl_inout_temp	: std_logic:='1';-- 1 out, 0 in
+begin
+	if(i_en = '0') then
+		en_sda_inout_temp := '1';
+		sda_out_temp 		:= '1';
+		en_scl_inout_temp := '1';
+		scl_out_temp 		:= '1';
+		state 				<= ready;
+	elsif(rising_edge(i_clk)) then
+			count := count +1;
+			case state is
+			
+				when ready 	=>
+					index_i2c := 0;
+					frame_i2c(7 downto 1 ) := i_addr;	--address
+					-- frame_i2c(9) is ack1
+					state <= start;
+					en_sda_inout_temp := '0';--high z
+					sda_out_temp		:= '1';
+					sda_in_temp 		:= '1';
+					en_scl_inout_temp := '0';--high z
+					scl_out_temp 		:= '1';
+					scl_in_temp 		:= '1';
+					
+				when start 	=>
+					en_sda_inout_temp := '0';
+					sda_in_temp			:= io_SDA;
+					en_scl_inout_temp := '0';
+					scl_in_temp := io_SCL;
+					if( pre_sda = '1' and sda_in_temp = '0') then				-- sda xuong low
+						frame_i2c(index_i2c):= sda_in_temp;
+						en_temp		:= '1';
+					end if;
+					if(pre_scl = '1' and scl_in_temp = '0' and en_temp = '1') then			-- scl xuong low
+						state <= addr;
+						en_temp := '0';
+						index_i2c := index_i2c+1;	-- index_i2c =1
+					end if;
+					
+					
+				when addr	=>
+					en_scl_inout_temp := '0';
+					scl_in_temp 		:= io_SCL;
+					en_sda_inout_temp := '0';
+					sda_in_temp			:= io_SDA;
+					if(pre_scl = '1' and scl_in_temp = '0') then			-- suon len cua scl
+						frame_i2c(index_i2c) := sda_in_temp;--frame_i2c)
+						index_i2c := index_i2c+1;	
+						if(index_i2c = 8) then
+							state <= wr;
+						end if;
+					end if;
+					
+					
+				when wr		=>
+					en_scl_inout_temp	:= '0';
+					scl_in_temp 		:= io_SCL;
+					en_sda_inout_temp := '0';
+					sda_in_temp			:= io_SDA;
+					if(pre_scl = '1' and scl_in_temp = '0') then			-- suon len cua scl
+						frame_i2c(index_i2c) := sda_in_temp;
+						index_i2c := index_i2c+1;		-- index_i2c =9
+						if(index_i2c = 9) then
+							state <= ack1;
+						end if;
+					end if;
+					
+				when ack1	=>
+					en_scl_inout_temp := '0';
+					scl_in_temp			:= io_SCL;
+					--en_sda_inout_temp := '1';				-- sda out enable
+					if(pre_scl = '0' and scl_in_temp = '1') then			-- suon len cua scl
+						en_sda_inout_temp := '1';
+						if( frame_i2c(7 downto 1) = i_addr) then		-- dung dia chi slave
+							en_sda_inout_temp := '1';	
+							sda_out_temp 		:= '0';
+							frame_i2c(index_i2c) := '0';
+							index_i2c := index_i2c+1;		-- index_i2c =10
+							--en_sda_inout_temp:='0';
+							if( frame_i2c(8) = '0' ) then	-- master write, slave recv
+								state <= data_recv;
+							else
+								state <= data_tran;
+								frame_i2c(17 downto 10) := i_data_tran;
+								count:=0;
+							end if;
+						else
+							sda_out <= '1';
+							state <= stop;
+						end if;
+					end if;
+					
+				when data_tran	=>
+					-- doi xung suon xuong cua SCL lan dau
+					if(en_temp = '0' and en_tran =  '0' ) then	-- lan dau vao
+						en_scl_inout_temp := '0';
+						scl_in_temp			:= io_SCL;
+						-- keo SCL xuong low
+						if( pre_scl = '1' and scl_in_temp = '0') then
+							en_scl_inout_temp	:= '1';
+							scl_out_temp 		:= '0';
+							en_temp 				:= '1';
+							count					:= 0;
+							end if;
+						end if;
+						
+					-- delay 1 khoang thoi gian, roi keo SCL len 
+					if( en_temp = '1' and count = 2 * perscale and en_tran = '0') then				-- delay 1 khoang de chuan bi du lieu
+						-- cho scl len high
+						en_scl_inout_temp	:= '1';
+						scl_out_temp 		:= '1';
+						
+						en_tran				:= '1';
+						
+						en_sda_inout_temp := '1';
+						sda_out_temp := frame_i2c(index_i2c);
+						--index_i2c := index_i2c+1;		-- index_i2c = 11
+						--count := 0;
+						
+					elsif(en_tran = '1') then			
+						en_scl_inout_temp := '0';
+						scl_in_temp 		:= io_SCL;		
+						if(pre_scl = '0' and scl_in_temp = '1') then			-- suon len scl
+							en_sda_inout_temp := '1';
+							sda_out_temp := frame_i2c(index_i2c);
+							index_i2c := index_i2c+1;		
+							if(index_i2c = 18) then
+								state <= ack2_master;
+								en_tran := '0';
+								en_temp	:= '0';
+							end if;
+						end if;
+					end if;
+						
+					
+				when data_recv	=>
+					en_scl_inout_temp := '0';
+					scl_in_temp 		:= io_SCL;
+					--en_sda_inout_temp := '0';
+					--sda_in_temp			:= io_SDA;
+					if(pre_scl = '0' and scl_in_temp = '1') then			-- suon len cua scl
+						en_sda_inout_temp := '0';
+						sda_in_temp			:= io_SDA;
+						frame_i2c(index_i2c) := sda_in_temp;
+						index_i2c := index_i2c+1;		
+						if(index_i2c = 18) then
+							state <= ack2_slave;
+					end if;
+					end if;
+					
+				when ack2_master =>
+					en_scl_inout_temp := '0';
+					scl_in_temp 		:= io_SCL;
+					if(en_temp_2 = '0' and pre_scl = '1' and scl_in_temp = '0') then			-- suon xuong cua scl
+						en_sda_inout_temp := '0';
+						sda_in_temp			:= io_SDA;
+						en_temp_2			:= '1';
+					end if;
+					
+					if( en_temp_2 = '1' and pre_scl = '0' and scl_in_temp = '1') then			-- suon len cua scl
+						en_sda_inout_temp := '0';
+						sda_in_temp			:= io_SDA;
+						frame_i2c(index_i2c) := sda_in_temp;
+						if( frame_i2c(index_i2c) = '0') then -- master send  nack bit
+							state <= stop;
+							index_i2c := index_i2c+1;		-- index_i2c =19
+							en_temp_2	:= '0';
+						else											-- master send ack bit
+							----- reapeat data tran 3 time
+							
+							if(time_repeat = 2) then
+								state <= stop;
+								time_repeat := 0;
+							else
+								time_repeat := time_repeat +1;
+								state <= data_tran;
+								index_i2c := 10;
+							end if;	
+						end if;
+					end if;
+						
+					
+				when ack2_slave	=>
+					en_scl_inout_temp := '0';
+					scl_in_temp			:= io_SCL;
+					--en_sda_inout_temp := '1';--
+					if(pre_scl = '0' and scl_in_temp = '1') then			-- suon len cua scl
+						en_sda_inout_temp := '1';
+						sda_out_temp 		:= '0';
+						frame_i2c(index_i2c):='0';
+						o_data_recv <= frame_i2c(17 downto 10);
+						index_i2c := index_i2c+1;		-- index_i2c =19
+						state <= stop;
+					end if;
+					
+				when stop =>
+					en_scl_inout_temp := '0';
+					scl_in_temp := io_SCL;
+					--en_sda_inout_temp := '0';
+					if(pre_scl = '0' and scl_in_temp = '1') then		-- scl len 1
+						en_sda_inout_temp := '0';
+						--sda_in_temp := io_SDA;
+						en_temp := '1';
+					
+						elsif( en_temp = '1' ) then		-- sda len 1
+							en_sda_inout_temp := '0';
+							sda_in_temp := io_SDA;
+							if(sda_in_temp = '1') then
+								state <= ready;
+								frame_i2c(index_i2c) := '1';
+								en_temp := '0';
+								index_i2c:=0;
+							end if;
+						end if;
+					
+					
+					
+			end case;
+			
+	end if;
+	en_scl_inout	<=	en_scl_inout_temp;
+	en_sda_inout	<=	en_sda_inout_temp;
+	sda_in			<=	sda_in_temp;
+	sda_out			<= sda_out_temp;
+	scl_in			<=	scl_in_temp;
+	scl_out			<=	scl_out_temp;
+	pre_sda			<= sda_in;
+	pre_scl			<= scl_in;
+	--state_temp		<= state;
+end process;
+end main;

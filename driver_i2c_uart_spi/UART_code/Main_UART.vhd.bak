@@ -1,0 +1,8 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Main_UART is 
+port(
+	UART_TX	: out std_logic;
+	UART_RX	: in std_logic
+);

@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library std;
+use std.standard.all;
+library work;
+use work.all;
+
+entity Main_I2C is 
+port(
+	clk	: in std_logic;
+);
+end Main_I2C;
+
+architecture main of Main_I2C is
+begin
+end main;
